@@ -1,4 +1,4 @@
-package phone;
+package cell_phone;
 
 public class Contact {
 
@@ -26,3 +26,4 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 }
+

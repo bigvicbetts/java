@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Bank {
 
     private String name;
-    private ArrayList<Branch> branches;
+    private ArrayList<bank.Branch> branches;
 
     public Bank(String name) {
         this.name = name;
-        this.branches = new ArrayList<Branch>();
+        this.branches = new ArrayList<bank.Branch>();
     }
 
     // See if branch exists
@@ -22,7 +22,7 @@ public class Bank {
         return -1;
     }
 
-    public boolean addBranch(Branch branch) {
+    public boolean addBranch(bank.Branch branch) {
         if (branchExists(branch.getName()) >= 0) { // If branch already exists in customers list...
             System.out.printf("%s branch already exists.\n", branch.getName());
             return false;
@@ -31,7 +31,7 @@ public class Bank {
         return true;
     }
 
-    public boolean addCustomerToBranch(String branchName, Customer customer) { // If branch exists in branches list...
+    public boolean addCustomerToBranch(String branchName, bank.Customer customer) { // If branch exists in branches list...
         if (branchExists(branchName) >= 0) {
             branches.get(branchExists(branchName)).addCustomer(customer);
             return true;
@@ -50,7 +50,7 @@ public class Bank {
     }
 
     public void showBranchCustomers(String branchName, boolean showTransactions) {
-        ArrayList<Customer> branchCustomers;
+        ArrayList<bank.Customer> branchCustomers;
         if (branchExists(branchName) >= 0) {
             branchCustomers = branches.get(branchExists(branchName)).getCustomers();
             for (int i = 0; i < branchCustomers.size(); i++) {
